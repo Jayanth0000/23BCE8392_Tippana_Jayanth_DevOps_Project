@@ -11,15 +11,15 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 echo 'Building the Docker image...'
-                sh 'docker build -t abctechnologies-web:latest .'
+                bat 'docker build -t abctechnologies-web:latest .'
             }
         }
 
         stage('Deploy to Kubernetes') {
             steps {
                 echo 'Deploying the container to Kubernetes cluster...'
-                sh 'kubectl apply -f k8s-deployment.yaml'
-                sh 'kubectl apply -f k8s-service.yaml'
+                bat 'kubectl apply -f k8s-deployment.yaml'
+                bat 'kubectl apply -f k8s-service.yaml'
             }
         }
     }
