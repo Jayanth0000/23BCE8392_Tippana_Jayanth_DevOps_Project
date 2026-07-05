@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: abc-company-website
+  labels:
+    app: corporate-web
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: corporate-web
+  template:
+    metadata:
+      labels:
+        app: corporate-web
+    spec:
+      containers:
+      - name: web-container
+        image: abctechnologies-web:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 80
