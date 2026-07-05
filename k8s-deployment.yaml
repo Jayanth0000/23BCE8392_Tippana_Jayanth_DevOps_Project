@@ -15,8 +15,8 @@ spec:
         app: corporate-web
     spec:
       containers:
-      - name: web-container
+      - name: abc-company-website
         image: abctechnologies-web:latest
-        imagePullPolicy: Never
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
